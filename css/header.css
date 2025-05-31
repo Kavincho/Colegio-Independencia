@@ -1,89 +1,195 @@
-*{
-		margin:0px;
-		padding:0px;
-        box-sizing: border-box;
-        
-			}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-.encabezado{
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.mi-header {
+  background-color: #222;
+  color: white;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  background-color: #8b2020;
-  padding: 9px 30px;
-  color: white;
-  
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
 }
 
-.menu{
-  margin-bottom: 14px;
-  text-decoration: none;
-  color: #fff;
-  transition: color 0.3s;
-  margin-right:10%;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 200%;
+  font-weight: bold;
 }
 
-.logo{
-  width: 70px;
-  height: auto;
+.logo-img {
+  height: 80px;
+  width: auto;
   border-radius: 10%;
-  margin-left: 230%;
 }
 
-.textt{
-	text-align: left;
-	font-family: Arial, Helvetica, sans-serif;
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 9px;
+  position: relative;
+  font-size: 120%;
+
 }
 
-#header {
-		width: 100%;
-		font-family:Arial, Helvetica, sans-serif;
-        font-size:125%;
-        
-        
-			}
-			
-ul, ol {
-		list-style:none;
-			}
-			
-.nav > li {
-		float:left;
-        margin-top: 0px;
-      
-			}
-			
-.nav li a {
-		color:#fff;
-        
-		text-decoration:none;
-		padding:10px 12px;
-		display:block;
-        
-			}
-			
-.nav li a:hover {
-		background-color:#4b4545;
-			}
-			
-.nav li ul {
-        background-color: #3b2f2f;
-		display:none;
-		position:absolute;
-		min-width:140px;
-		
-			}
-			
-.nav li:hover > ul {
-				display:block;
-			}
-			
-.nav li ul li {
-				position:relative;
-			}
-			
-.nav li ul li ul {
-				right:-140px;
-				top:0px;
-			}
-			
+
+.nav-links li {
+  position:relative;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+}
+
+/* Submenú */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #757070;
+  list-style: none;
+  padding: 1px 0;
+  display: none;
+  min-width: 15px;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 8px;
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #444;
+}
+
+/* Hover en pantallas grandes */
+.nav-links .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* BANNER */
+.banner {
+  background: url('https://source.unsplash.com/1600x600/?nature,technology') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  position: relative;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.banner-content {
+  z-index: 2;
+  max-width: 800px;
+}
+
+.banner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.banner p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.btn {
+  padding: 12px 25px;
+  background-color: #ff6600;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #222;
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .dropdown-menu {
+    position: static;
+    display: none;
+    background-color: #222;
+  }
+
+.dropdown-menu.show {
+    display: block;
+  }
+
+  .banner h1 {
+    font-size: 2rem;
+  }
+
+  .banner p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    height: 80vh;
+    padding: 10px;
+  }
+
+  .banner h1 {
+    font-size: 1.5rem;
+  }
+
+  .banner p {
+    font-size: 0.9rem;
+  }
+}

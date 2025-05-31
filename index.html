@@ -6,40 +6,88 @@
   <title>Inicio - Mi Sitio Web</title>
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  
+  
 </head>
 <body>
 
   <div id="header-container"></div>
 
-  <main class="contenedor">
-        <div class="text">
-            <h1>INDEPENDENCIA AMERICANA</h1> 
-        </div>
-        <br>
-        <div class="text">
-           <P class="P"> INTITUCION EMBLEMATICA DE AREQUIPA </P>
-        </div>
-    
-  </main>
-        <div class="contu">
-            <ul class="imgs">
-                <li><img src="https://i.ytimg.com/vi/ppvHqt5aJrE/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGGUgVyhVMA8=&rs=AOn4CLA-bUxRiP7QWqofA48DBrOh6xz1ag" alt="estudiantes" class="img"></li>
-                <li>
-                    <div>hello</div>
-                    <div>word</div>
-                </li>
-            </ul>
-        </div>
-        <div class="cont">
-            <ul class="ims"> 
-                <li>
-                    <div>hello</div>
-                    <div>word</div>
-                </li>
-                <li><img src="https://i.ytimg.com/vi/ppvHqt5aJrE/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGGUgVyhVMA8=&rs=AOn4CLA-bUxRiP7QWqofA48DBrOh6xz1ag" alt="estudiantes" class="img"></li>
-            </ul>
-        </div>
 
+    <section class="banner">
+    <div class="banner-content">
+      <h1>Bienvenido al Portal Independencia Americana</h1>
+      <p>Explora lo mejor que tenemos para ofrecer.</p>
+      <a href="#explorar" class="btnt">Explorar</a>
+    
+
+<div class="contenedor">
+
+    <div class="carousel">
+    <!-- Radios para controlar los slides -->
+    <input type="radio" name="radio-btn" id="radio1" checked>
+    <input type="radio" name="radio-btn" id="radio2">
+    <input type="radio" name="radio-btn" id="radio3">
+
+    <!-- Slides -->
+    <div class="slides">
+        <div class="slide">
+        <img src="/assets/439690178_1188295855906766_5700920630010601486_n.jpg" alt="Imagen 1">
+        </div>
+        <div class="slide">
+        <img src="/assets/344762982_791845692333466_4910760114003067393_n.jpg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+        <img src="/assets/Bienvenida.png" alt="Imagen 3">
+        </div>
+    </div>
+
+    <!-- Botones de navegación -->
+    <div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+    </div>
+    </div>
+
+    </div>
+</div>
+</section>
+
+<footer id="footer-container"></footer>
+
+
+
+
+
+<!-- Bootstrap JS Bundle CDN (con Popper incluido) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+  <!-- Script -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Toggle submenu en móviles
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    dropdownToggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault(); // Evita que salte al #servicios
+        dropdownMenu.classList.toggle('show');
+      }
+    });
+  </script>
+
+  <script src="/js/footer.js"></script>
   <script src="/js/header.js"></script>
 </body>
 </html>

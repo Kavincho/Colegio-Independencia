@@ -1,40 +1,51 @@
-.bienvenida{
-    background-color: rgba(2, 65, 65, 0.774);
-    color: azure;
-    
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    margin-left:25%;
-    margin-right:25%;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    
-    
+.profesores {
+  padding: 40px 300px;
+  background-color: #f8f8f8;
+  text-align: center;
+  margin-top: 10%;
 }
 
-.contenedor{
-    background-color: aqua;
-    margin: 0px;
-    padding: 0px;
+.profesores h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #333;
 }
 
-
-.text{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    
-
+.profesores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-
-.historia{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    
+.profesor {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
 }
 
-.docentes{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    
+.profesor:hover {
+  transform: translateY(-5px);
+}
+
+.profesor img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.profesor h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: #222;
+}
+
+.profesor p {
+  margin: 0;
+  color: #777;
 }
